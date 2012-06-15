@@ -9,3 +9,4 @@ ln -s ~/.dotfiles/.Xdefaults ~/.Xdefaults
 
 ln -s ~/.dotfiles/awesome/rc.lua ~/.config/awesome/rc.lua
 
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
