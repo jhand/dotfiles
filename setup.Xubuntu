@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mkdir ~/.xmonad
+ln -s ~/.dotfiles/monad.hs ~/.xmonad/xmonad.hs
+ln -s ~/.dotfiles/.xmonad.start.Xubuntu ~/.xmonad/xmonad.start
+ln -s ~/.dotfiles/.xmobarrc ~/.xmonad/.xmobarrc
+
+ln -s ~/.dotfiles/.Xdefaults ~/.Xdefaults
+
+ln -s ~/.dotfiles/rc.lua ~/.config/awesome/rc.lua
+
