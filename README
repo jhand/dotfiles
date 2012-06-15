@@ -1,16 +1,16 @@
 Just a collection of my personal dot files.  All are some manner of a work in progress and rough around the edges.
 They tend to be updated as I have time and inclination.
 
-Some are set to work with Ubuntu defaults and other are Arch. 
+Some are set to work with my Ubuntu setup and others with my Arch setup.
 
 
 
 Various config files for programs
 Xmonad - Tiling window manager - xmonad.hs
+	xmonad.start is a little autostart script for various programs. It's not very good at the moment but it gets the job done. 
 Xmobar - status bar designed to work with Xmonad - .xmobarrc
 
 Awesome - Tiling window manager - rc.lua
-Bashrc - Configures bash -  ~
 
 Xdefaults - sets terminal properties among other things
 
