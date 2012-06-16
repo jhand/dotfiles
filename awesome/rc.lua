@@ -370,18 +370,20 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 
-function run_once(prg)
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. prg .. " || (" ..
-prg .. ")")
-end
+--Not used since autostart is being handles by a script
+--function run_once(prg)
+--  awful.util.spawn_with_shell("pgrep -u $USER -x " .. prg .. " || (" ..
+--prg .. ")")
+--end
 
-run_once("nitrogen --restore")
-run_once("xfce4-power-manager")
+awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
+--run_once("nitrogen --restore")
+--run_once("xfce4-power-manager")
 -- run_once("volumeicon") --reenable if using Arch
-run_once("nm-applet")
-run_once("xcompmgr")
-run_once("~/.dropbox-dist/dropboxd")
-run_once("conky")
-run_once("thunar --daemon")
-run_once("parcellite")
-awful.util.spawn("nitrogen --restore")
+--run_once("nm-applet")
+--run_once("xcompmgr")
+--run_once("~/.dropbox-dist/dropboxd")
+--run_once("conky")
+--run_once("thunar --daemon")
+--run_once("parcellite")
+--awful.util.spawn("nitrogen --restore")

@@ -42,3 +42,9 @@ if [ -z "$(pgrep parcellite)" ]
 	parcellite &	
 fi
 
+if [ -z "$(pgrep conky)" ]
+	then
+	conky &	
+fi
+
+

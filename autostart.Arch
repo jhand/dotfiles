@@ -1,0 +1,54 @@
+#!/bin/sh
+
+
+pkill trayer
+if [ -z "$(pgrep trayer)" ]
+	then
+trayer --edge top --align right --SetDockType true \
+ --expand true --width 11 --transparent true --tint 0x000000 --height 20 &
+#Original Trayer command no partialstrut in active on due to a bug where it messes with screen space
+#trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 12 --transparent true --tint 0x000000 &
+
+fi
+
+
+if [ -z "$(pgrep xfce4-power-manager)" ]
+	then
+	xfce4-power-manager &
+fi
+
+
+if [ -z "$(pgrep nm-applet)" ]
+	then
+	nm-applet &
+fi
+
+
+if [ -z "$(pgrep dropbox)" ]
+	then
+	dropbox &
+fi
+
+nitrogen --restore
+
+
+if [ -z "$(pgrep xcompmgr)" ]
+	then
+	xcompmgr -c &	
+fi
+
+if [ -z "$(pgrep parcellite)" ]
+	then
+	parcellite &	
+fi
+
+if [ -z "$(pgrep conky)" ]
+	then
+	conky &	
+fi
+
+
+if [ -z "$(pgrep volumeicon)" ]
+	then
+	volumeicon &	
+fi
