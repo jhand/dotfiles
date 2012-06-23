@@ -14,6 +14,7 @@ import XMonad.Layout.IndependentScreens
 keysToAdd x = [((mod4Mask, xK_F4), kill)
      ,((mod4Mask, xK_Left), prevWS )
      ,((mod4Mask, xK_Right), nextWS )
+     ,((mod4Mask, xK_v), spawn "xfce4-mixer" ) 
      ,((mod4Mask, xK_d), spawn "firefox" ) 
      ,((mod4Mask, xK_f), spawn "thunar" ) 
      ,((mod4Mask .|. shiftMask, xK_f), spawn "pcmanfm" ) 
@@ -36,6 +37,7 @@ myWorkspaces    = ["1:www","2:term","3:dev","4:IM","5","6","7","8","9"]
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
       , resource =? "Dialog" --> doFloat
+	, className =? "Xfce4-mixer" --> doFloat
     ]
  
 main = do
