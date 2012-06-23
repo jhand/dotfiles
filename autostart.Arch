@@ -2,7 +2,7 @@
 
 
 pkill trayer
-if [ -z "$(pgrep trayer)" ]
+if [ -z "$(pgrep trayer)" && -z "$(pgrep xmonad)" ]
 	then
 trayer --edge top --align right --SetDockType true \
  --expand true --width 11 --transparent true --tint 0x000000 --height 20 &

@@ -7,7 +7,6 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
