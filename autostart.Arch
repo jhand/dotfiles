@@ -2,10 +2,10 @@
 
 
 pkill trayer
-if [ -z "$(pgrep trayer)" && -z "$(pgrep xmonad)" ]
+if [ -z "$(pgrep trayer)" ] && [ "$(pgrep xmonad)" ] ;
 	then
 trayer --edge top --align right --SetDockType true \
- --expand true --width 11 --transparent true --tint 0x000000 --height 20 &
+ --expand true --width 11 --transparent true --alpha 0 --tint 0x000000 --height 17 &
 #Original Trayer command no partialstrut in active on due to a bug where it messes with screen space
 #trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 12 --transparent true --tint 0x000000 &
 
