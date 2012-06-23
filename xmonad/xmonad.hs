@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
@@ -10,6 +11,8 @@ import XMonad.Util.EZConfig
 import qualified Data.Map as M  
 import XMonad.Actions.CycleWS
 import XMonad.Layout.IndependentScreens
+import Graphics.X11.Xlib.Extras
+import Foreign.C.Types (CLong)
  
 keysToAdd x = [((mod4Mask, xK_F4), kill)
      ,((mod4Mask, xK_Left), prevWS )
@@ -34,10 +37,26 @@ myFocusFollowsMouse = True
 myTerminal = "urxvt"
 myWorkspaces    = ["1:www","2:term","3:dev","4:IM","5","6","7","8","9"]
 
+
+getProp :: Atom -> Window -> X (Maybe [CLong])
+getProp a w = withDisplay $ \dpy -> io $ getWindowProperty32 dpy a w
+
+
+checkAtom name value = ask >>= \w -> liftX $ do
+     a <- getAtom name
+     val <- getAtom value
+     mbr <- getProp a w
+     case mbr of
+         Just [r] -> return $ elem (fromIntegral r) [val]
+         _ -> return False
+
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
       , resource =? "Dialog" --> doFloat
 	, className =? "Xfce4-mixer" --> doFloat
+	, stringProperty "_NET_WM_WINDOW_TYPE" =? "_NET_WM_WINDOW_TYPE_DIALOG" --> doFloat
+	, isInProperty "_NET_WM_WINDOW_TYPE" "_NET_WM_WINDOW_TYPE_DIALOG" --> doFloat
+--	, checkAtom "_NET_WM_WINDOW_TYPE" "_NET_WM_WINDOW_TYPE_DIALOG" --> doFloat
     ]
  
 main = do
