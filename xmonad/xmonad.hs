@@ -40,7 +40,7 @@ myManageHook = composeAll
  
 main = do
     nScreens <-  countScreens
-    spawn "sh ~/.xmonad/xmonad.start"
+    spawn "sh ~/.xmonad/autostart.sh"
     xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above

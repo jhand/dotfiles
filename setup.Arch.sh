@@ -9,6 +9,6 @@ ln -s ~/.dotfiles/.Xdefaults ~/.Xdefaults
 
 mkdir ~/.config/awesome/
 ln -s ~/.dotfiles/awesome/rc.lua ~/.config/awesome/rc.lua
-ln -s ~/.dotfiles/autostart.Arch ~/.xmonad/xmonad.start
+ln -s ~/.dotfiles/autostart.Arch ~/.xmonad/autostart.sh
 
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf

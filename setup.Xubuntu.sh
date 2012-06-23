@@ -2,7 +2,7 @@
 
 mkdir ~/.xmonad
 ln -s ~/.dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
-ln -s ~/.dotfiles/autostart.Xubuntu ~/.xmonad/xmonad.start
+ln -s ~/.dotfiles/autostart.Xubuntu ~/.xmonad/autostart.sh
 ln -s ~/.dotfiles/xmonad/.xmobarrc ~/.xmonad/.xmobarrc
 
 ln -s ~/.dotfiles/.Xdefaults ~/.Xdefaults
