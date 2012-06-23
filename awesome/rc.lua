@@ -7,8 +7,6 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
--- Load Debian menu entries
-require("debian.menu")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -55,12 +53,6 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
--- require('freedesktop.utils')
---  freedesktop.utils.terminal = terminal  -- default: "xterm"
---  freedesktop.utils.icon_theme = 'gnome' -- look inside /usr/share/icons/, default: nil (don't use icon theme)
---  require('freedesktop.menu')
-  -- require("debian.menu")
---    menu_items = freedesktop.menu.new()
 
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
@@ -70,12 +62,7 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
- --                                   {"Applications",menu_items},
-	--			    { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal },
-				    {"logout", awesome.quit},
-				    {"reboot", "reboot"},
-				    {"shutdown", "shutdown -h 0"}
                                   }
                         })
 
@@ -202,6 +189,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,    }, "e", function ()  awful.util.spawn("medit")   end),
     awful.key({ modkey,    }, "f", function ()  awful.util.spawn("thunar")   end),
     awful.key({ modkey,    }, "v", function ()  awful.util.spawn("xfce4-mixer")   end),
+    awful.key({ modkey,    }, "p", function ()  awful.util.spawn("dmenu_run")   end),
+    
 
     awful.key({ "Control",    }, "space", function ()  awful.util.spawn("dmenu_run")   end),
     -- Layout manipulation
@@ -370,20 +359,4 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 
---Not used since autostart is being handles by a script
---function run_once(prg)
---  awful.util.spawn_with_shell("pgrep -u $USER -x " .. prg .. " || (" ..
---prg .. ")")
---end
-
 awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
---run_once("nitrogen --restore")
---run_once("xfce4-power-manager")
--- run_once("volumeicon") --reenable if using Arch
---run_once("nm-applet")
---run_once("xcompmgr")
---run_once("~/.dropbox-dist/dropboxd")
---run_once("conky")
---run_once("thunar --daemon")
---run_once("parcellite")
---awful.util.spawn("nitrogen --restore")
