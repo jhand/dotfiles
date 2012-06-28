@@ -137,12 +137,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     --Application Launchers
     , ((mod4Mask, xK_v), spawn "xfce4-mixer" ) 
-    , ((mod4Mask, xK_d), spawn "firefox" ) 
+    , ((mod4Mask, xK_w), spawn "firefox" ) 
     , ((mod4Mask, xK_f), spawn "pcmanfm" ) 
     , ((mod4Mask .|. shiftMask, xK_f), spawn "thunar" ) 
     , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
     , ((0, xK_Print), spawn "scrot")
-    , ((mod4Mask, xK_s), spawn "subl" ) 
+    , ((mod4Mask, xK_e), spawn "subl" ) 
 
     ]
     ++
