@@ -191,7 +191,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,    }, "p", function ()  awful.util.spawn("dmenu_run")   end),
     
 
-    awful.key({ "Control",    }, "space", function ()  awful.util.spawn("dmenu_run")   end),
+    awful.key({ "Control",    }, "space", function ()  awful.util.spawn("xfce4-appfinder")   end),
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
